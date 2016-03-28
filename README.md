@@ -9,5 +9,6 @@ Running (in R):
 Notes on usage:
  - Expression table is a genes-by-cells matrix, requiring both row (gene) and column (cell) names
  - Subgroups table is a cells-by-subgroups matrix, requiring both row (cell) and column (header) names
+ - Cell names must match between tables
  - The app is expression unit-agnostic, and the minimum expression threshold is decided by the user
  - The files are capped at 100Mb
