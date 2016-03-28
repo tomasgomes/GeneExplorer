@@ -1,6 +1,6 @@
 library(shiny)
 library(ggplot2)
-options(shiny.maxRequestSize=100*1024^2) 
+options(shiny.maxRequestSize=100*1024^2, shiny.launch.browser = TRUE)
 
 # Define server logic
 shinyServer(function(input, output) {
