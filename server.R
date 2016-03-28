@@ -5,6 +5,22 @@ options(shiny.maxRequestSize=100*1024^2, shiny.launch.browser = TRUE)
 # Define server logic
 shinyServer(function(input, output) {
   
+  # Render drop down menu to select gene
+  observe({
+    output$gene1<-renderUI({
+      expTable <- input$file1
+      if(is.null(expTable)) return(NULL)
+      
+      expTable_data=read.table(expTable$datapath, header=TRUE,
+                             sep="\t", row.names = 1)
+      selectInput("gene1", "Select Gene", 
+                  choices = rownames(expTable_data))
+      
+    })
+  })
+  
+  
+  
   # Render drop down menu to select from several columns
   observe({
     output$cell_class<-renderUI({
@@ -24,7 +40,7 @@ shinyServer(function(input, output) {
   output$perc_group<-renderDataTable({
     expTable <- input$file1
     gTable <- input$file2
-    gene <- input$gene
+    gene <- input$gene1
     thres <- input$thres
     cell_cl <- input$cell_class
     
@@ -66,7 +82,7 @@ shinyServer(function(input, output) {
   output$vioPlot<-renderPlot({
     expTable <- input$file1
     gTable <- input$file2
-    gene <- input$gene
+    gene <- input$gene1
     thres <- input$thres
     cell_cl <- input$cell_class
     

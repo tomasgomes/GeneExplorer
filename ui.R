@@ -25,8 +25,9 @@ shinyUI(fluidPage(
         uiOutput("cell_class"),
         
         # Gene name
-        textInput("gene", 'Choose a Gene', value = "", 
-                  width = NULL, placeholder = "Input gene here"),
+        uiOutput("gene1"),
+        #textInput("gene", 'Choose a Gene', value = "", 
+        #          width = NULL, placeholder = "Input gene here"),
         
         # Expression threshold
         numericInput("thres", 'Choose expression threshold', 0, min = 0, max = NA)
