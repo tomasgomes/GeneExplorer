@@ -1,0 +1,13 @@
+cell_name	type	tissue
+cell0	type1	bone
+cell1	type1	bone
+cell2	type1	bone
+cell3	type2	bone
+cell4	type2	muscle
+cell5	type2	muscle
+cell6	type3	muscle
+cell7	type3	muscle
+cell8	type3	nipple
+cell9	type4	nipple
+cell10	type4	nipple
+cell11	type4	nipple

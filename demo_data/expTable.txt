@@ -1,0 +1,13 @@
+gene	cell0	cell1	cell2	cell3	cell4	cell5	cell6	cell7	cell8	cell9	cell10	cell11
+geneA	1	0	0	8	9	8	0	3	1	0	6	0
+geneB	10	15	14	24	9	18	0	0	0	78	50	61
+geneC	0	0	0	0	2	4	0	0	0	0	0	0
+geneD	4	2	5	1	2	1	10	15	18	0	0	0
+geneE	100	99	98	10	2	4	88	78	97	0	0	0
+geneF	0	0	0	0	0	0	0	2	0	130	144	151
+geneG	259	300	277	302	304	287	199	230	260	269	310	288
+geneH	17	19	23	0	3	0	2	1	0	77	89	76
+geneI	0	0	3	0	0	0	0	1	0	0	0	0
+geneJ	0	0	0	133	123	111	0	4	2	0	3	1
+geneK	12	11	10	9	8	7	6	5	4	3	2	1
+geneL	99	59	77	0	0	0	1	2	0	0	2	0	
