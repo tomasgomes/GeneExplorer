@@ -2,9 +2,9 @@
 A simple shiny app for exploring genes in single cell RNA-seq data
 
 Running (in R):
-1. Download and install shiny package
-2. library(shiny)
-3. runGitHub("GeneExplorer","tomasgomes")
+ 1. Download and install shiny package
+ 2. library(shiny)
+ 3. runGitHub("GeneExplorer","tomasgomes")
 
 Notes on usage:
  - Expression table is a genes-by-cells matrix, requiring both row (gene) and column (cell) names
