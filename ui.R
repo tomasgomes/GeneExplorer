@@ -37,7 +37,8 @@ shinyUI(fluidPage(
     mainPanel(
       
       tabsetPanel(
-        tabPanel("Violin", plotOutput("vioPlot")), 
+        tabPanel("Violin Plot", plotOutput("vioPlot")), 
+        tabPanel("Boxplot", plotOutput("boxPlot")), 
         tabPanel("%Table", dataTableOutput("perc_group"))
       )
       

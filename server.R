@@ -119,4 +119,47 @@ shinyServer(function(input, output) {
   })
   })
   
+  
+  # Box plot
+  observe({
+    output$boxPlot<-renderPlot({
+      expTable <- input$file1
+      gTable <- input$file2
+      gene <- input$gene1
+      thres <- input$thres
+      cell_cl <- input$cell_class
+      
+      if(is.null(expTable)) return(NULL)
+      if(gene=="") return(NULL)
+      
+      if(is.null(gTable)){
+        expTable_data=read.table(expTable$datapath, header=TRUE,
+                                 sep="\t", row.names = 1)
+        plot_data=data.frame("Category" = rep("All Cells", ncol(expTable_data)),
+                             "Expression" = as.numeric(expTable_data[gene,]))
+      } else{
+        expTable_data=read.table(expTable$datapath, header=TRUE,
+                                 sep="\t", row.names = 1)
+        gTable_data=read.table(gTable$datapath, header=TRUE,
+                               sep="\t", row.names = 1)
+        
+        plot_data=data.frame("Category" = gTable_data[colnames(expTable_data),cell_cl],
+                             "Expression" = as.numeric(expTable_data[gene,]))
+        
+      }
+      
+      bPlot=ggplot(plot_data, aes(x=Category, y=Expression, fill=Category))+
+        geom_boxplot() +
+        ggtitle(paste0(gene, " by ", cell_cl))+
+        geom_hline(yintercept=thres, linetype=2, colour="blue")+
+        geom_jitter(height = 0) +
+        theme_classic() +
+        theme(legend.position="none",
+              plot.title = element_text(lineheight=.8, face="bold"))
+      
+      return(bPlot)
+      
+    })
+  })
+  
 })
