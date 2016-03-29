@@ -1,6 +1,8 @@
 # GeneExplorer
 A simple shiny app for exploring genes in single cell RNA-seq data
 
+![alt tag](http://imgur.com/cADhx8p)
+
 Running (in R):
  1. Download and install shiny package
  2. library(shiny)
